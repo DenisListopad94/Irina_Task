@@ -1,0 +1,14 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Создать новую задачу
+{% endblock %}
+
+{% block content %}
+     <h1>Создать новую задачу</h1>
+     <form action="{% url 'create' %}" method="post">
+         {% csrf_token %}
+         {{form.as_p}}<br>
+         <button type="submit">Добавить</button>
+     </form>
+{% endblock %}
